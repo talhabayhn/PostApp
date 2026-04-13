@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PostApp</string>
+    <string name="screen_title_posts">Posts</string>
 
     <!-- Hints -->
     <string name="hint_title">Title</string>
