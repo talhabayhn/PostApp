@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -116,7 +117,13 @@ class PostListFragment : Fragment() {
     }
 
     private fun openEditBottomSheet(post: Post) {
-
+        findNavController().navigate(
+            PostListFragmentDirections.actionPostListToEditPost(
+                postId = post.id,
+                postTitle = post.title,
+                postBody = post.body
+            )
+        )
     }
 
     override fun onDestroyView() {
